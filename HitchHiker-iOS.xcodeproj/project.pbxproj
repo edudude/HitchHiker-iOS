@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		4FAA54BE6877BD62C1E46909 /* Pods_CarPool_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPool_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C429E7DD1FAE614500687595 /* CarPool-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CarPool-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HitchHiker-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429E7E01FAE614500687595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C429E7E21FAE614500687595 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C429E7E51FAE614500687595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		C429E7D41FAE614500687595 = {
 			isa = PBXGroup;
 			children = (
-				C429E7DF1FAE614500687595 /* CarPool-iOS */,
+				C429E7DF1FAE614500687595 /* HitchHiker-iOS */,
 				C429E7DE1FAE614500687595 /* Products */,
 				FD568E13D070D0EBAC9CB854 /* Pods */,
 				1296E48B771A1E464B539A78 /* Frameworks */,
@@ -61,12 +61,12 @@
 		C429E7DE1FAE614500687595 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C429E7DD1FAE614500687595 /* CarPool-iOS.app */,
+				C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C429E7DF1FAE614500687595 /* CarPool-iOS */ = {
+		C429E7DF1FAE614500687595 /* HitchHiker-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				C429E7E01FAE614500687595 /* AppDelegate.swift */,
@@ -76,7 +76,7 @@
 				C429E7E91FAE614500687595 /* LaunchScreen.storyboard */,
 				C429E7EC1FAE614500687595 /* Info.plist */,
 			);
-			path = "CarPool-iOS";
+			path = "HitchHiker-iOS";
 			sourceTree = "<group>";
 		};
 		FD568E13D070D0EBAC9CB854 /* Pods */ = {
@@ -91,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C429E7DC1FAE614500687595 /* CarPool-iOS */ = {
+		C429E7DC1FAE614500687595 /* HitchHiker-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C429E7EF1FAE614500687595 /* Build configuration list for PBXNativeTarget "CarPool-iOS" */;
+			buildConfigurationList = C429E7EF1FAE614500687595 /* Build configuration list for PBXNativeTarget "HitchHiker-iOS" */;
 			buildPhases = (
 				5E2246A60ED0FEE0FEEBFC44 /* [CP] Check Pods Manifest.lock */,
 				C429E7D91FAE614500687595 /* Sources */,
@@ -106,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = "CarPool-iOS";
+			name = "HitchHiker-iOS";
 			productName = "CarPool-iOS";
-			productReference = C429E7DD1FAE614500687595 /* CarPool-iOS.app */;
+			productReference = C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C429E7D81FAE614500687595 /* Build configuration list for PBXProject "CarPool-iOS" */;
+			buildConfigurationList = C429E7D81FAE614500687595 /* Build configuration list for PBXProject "HitchHiker-iOS" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C429E7DC1FAE614500687595 /* CarPool-iOS */,
+				C429E7DC1FAE614500687595 /* HitchHiker-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -366,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LAB4A2ATCG;
-				INFOPLIST_FILE = "CarPool-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HitchHiker-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelalexander.CarPool-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LAB4A2ATCG;
-				INFOPLIST_FILE = "CarPool-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HitchHiker-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelalexander.CarPool-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -394,7 +394,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C429E7D81FAE614500687595 /* Build configuration list for PBXProject "CarPool-iOS" */ = {
+		C429E7D81FAE614500687595 /* Build configuration list for PBXProject "HitchHiker-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C429E7ED1FAE614500687595 /* Debug */,
@@ -403,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C429E7EF1FAE614500687595 /* Build configuration list for PBXNativeTarget "CarPool-iOS" */ = {
+		C429E7EF1FAE614500687595 /* Build configuration list for PBXNativeTarget "HitchHiker-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C429E7F01FAE614500687595 /* Debug */,
