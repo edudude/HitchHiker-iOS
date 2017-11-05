@@ -15,6 +15,7 @@
 		C41DEFA21FAF7B0600DCBB4E /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA11FAF7B0600DCBB4E /* LeftSidePanelVC.swift */; };
 		C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */; };
 		C41DEFA71FAFC17400DCBB4E /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA61FAFC17400DCBB4E /* CenterVCDelegate.swift */; };
+		C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */; };
 		C429E7E11FAE614500687595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E01FAE614500687595 /* AppDelegate.swift */; };
 		C429E7E31FAE614500687595 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E21FAE614500687595 /* HomeVC.swift */; };
 		C429E7E61FAE614500687595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E41FAE614500687595 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		C41DEFA11FAF7B0600DCBB4E /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
 		C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		C41DEFA61FAFC17400DCBB4E /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
+		C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HitchHiker-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429E7E01FAE614500687595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C429E7E21FAE614500687595 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C41DEFA81FAFD28400DCBB4E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C429E7D41FAE614500687595 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		C429E7DF1FAE614500687595 /* HitchHiker-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C41DEFA81FAFD28400DCBB4E /* Extensions */,
 				C41DEFA51FAFC15400DCBB4E /* Protocols */,
 				C41DEF961FAF5D9C00DCBB4E /* Model */,
 				C41DEF951FAF5D8D00DCBB4E /* View */,
@@ -286,6 +297,7 @@
 				C41DEFA21FAF7B0600DCBB4E /* LeftSidePanelVC.swift in Sources */,
 				C41DEF9E1FAF68AD00DCBB4E /* CircleView.swift in Sources */,
 				C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */,
+				C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */,
 				C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */,
 				C429E7E31FAE614500687595 /* HomeVC.swift in Sources */,
 				C41DEF9C1FAF675100DCBB4E /* RoundedShadowView.swift in Sources */,
