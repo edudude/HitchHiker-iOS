@@ -16,4 +16,11 @@ class LeftSidePanelVC: UIViewController {
         
     }
 
+    @IBAction func singUpLoginBtnWasPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+        present(loginVC!, animated: true, completion: nil)
+    }
+    
+    
 }

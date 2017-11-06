@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Heavy</string>
             <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
@@ -21,20 +22,20 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="HitchHiker_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jpu-u3-gfy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khz-W6-dG2" customClass="GradientView" customModule="HitchHiker_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="k2e-xK-bhD"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="m0G-SZ-Q8v">
-                                <rect key="frame" x="16" y="35" width="343" height="30"/>
+                                <rect key="frame" x="20" y="35" width="374" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-ca-YHr">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -44,16 +45,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-JX-yXY">
-                                        <rect key="frame" x="107.5" y="0.0" width="128.5" height="30"/>
+                                        <rect key="frame" x="123" y="0.0" width="128" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdn-uH-HHh">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="72.333333333333343" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
                                                 <color key="textColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXe-lv-ypj">
-                                                <rect key="frame" x="72.5" y="0.0" width="56" height="30"/>
+                                                <rect key="frame" x="72.333333333333343" y="0.0" width="55.666666666666657" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
                                                 <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +62,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample-photo" translatesAutoresizingMaskIntoConstraints="NO" id="2Ek-MR-8ay" customClass="RoundedImageView" customModule="HitchHiker_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="313" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="344" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Y40-Nv-bL2"/>
                                         </constraints>
@@ -72,10 +73,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyS-MP-rHa">
-                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="656" width="414" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eip-a7-qfa" customClass="RoundedShadowButton" customModule="HitchHiker_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="6CX-1l-nvG"/>
@@ -98,7 +99,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdr-Tf-LL1">
-                                <rect key="frame" x="299" y="519" width="60" height="60"/>
+                                <rect key="frame" x="338" y="588" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6M3-wI-Rdj"/>
                                     <constraint firstAttribute="width" constant="60" id="KRe-v9-Kra"/>
@@ -111,10 +112,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="O4g-jI-YRK">
-                                <rect key="frame" x="20" y="83" width="335" height="61"/>
+                                <rect key="frame" x="20" y="83" width="374" height="61"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-Qo-4hY">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-hr-OjD" customClass="CircleView" customModule="HitchHiker_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="5" width="15" height="15"/>
@@ -130,7 +131,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glB-2T-6mT">
-                                                <rect key="frame" x="25" y="1.5" width="310" height="22"/>
+                                                <rect key="frame" x="25" y="1.6666666666666714" width="349" height="22"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -141,14 +142,14 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E6-IZ-JTu">
-                                        <rect key="frame" x="0.0" y="30" width="335" height="1"/>
+                                        <rect key="frame" x="0.0" y="30" width="374" height="1"/>
                                         <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="6dN-l9-25V"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7rZ-Oe-BRZ">
-                                        <rect key="frame" x="0.0" y="36" width="335" height="25"/>
+                                        <rect key="frame" x="0.0" y="36" width="374" height="25"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-tl-27R" customClass="CircleView" customModule="HitchHiker_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="5" width="15" height="15"/>
@@ -164,7 +165,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srg-ii-fBq">
-                                                <rect key="frame" x="25" y="1.5" width="310" height="22"/>
+                                                <rect key="frame" x="25" y="1.6666666666666714" width="349" height="21.999999999999986"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -214,14 +215,14 @@
             <objects>
                 <viewController storyboardIdentifier="LeftSidePanelVC" id="ItT-pc-CDk" customClass="LeftSidePanelVC" customModule="HitchHiker_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8t-TN-aUb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLb-0F-oJT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-e1-jmy">
-                                        <rect key="frame" x="20" y="28.5" width="67" height="33"/>
+                                        <rect key="frame" x="20" y="28.666666666666671" width="67" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -271,7 +272,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXu-vU-Nb6">
-                                <rect key="frame" x="16" y="602" width="179" height="45"/>
+                                <rect key="frame" x="16" y="671" width="179" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="cIv-CW-lY1"/>
                                 </constraints>
@@ -279,6 +280,9 @@
                                 <state key="normal" title="Sign Up / Login">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="singUpLoginBtnWasPressed:" destination="ItT-pc-CDk" eventType="touchUpInside" id="yCa-Bu-RKL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,10 +302,148 @@
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="133.5832083958021"/>
         </scene>
+        <!--LoginVC-->
+        <scene sceneID="OJg-8o-M6r">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="Bjb-Qr-nq4" customClass="LoginVC" customModule="HitchHiker_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iO0-X0-fwT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-24821" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-eD-jhR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-fH-LlG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GY5-I3-xOW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTK-fO-9CN">
+                                            <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Z58-MU-BHm"/>
+                                                <constraint firstAttribute="width" constant="30" id="w5D-y3-Y5F"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="cancelBtn"/>
+                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JgL-sV-vvh">
+                                            <rect key="frame" x="32.333333333333343" y="177.66666666666663" width="350" height="380.66666666666674"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nbF-FD-fXe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="160.66666666666666"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-8O-IcK">
+                                                            <rect key="frame" x="51.333333333333343" y="0.0" width="247.66666666666666" height="65.666666666666686"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTu-h6-Yif">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="65.666666666666686"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
+                                                                    <color key="textColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-Uf-vwl">
+                                                                    <rect key="frame" x="138" y="0.0" width="109.66666666666666" height="65.666666666666686"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
+                                                                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up or login to start requesting rides with HTCHHKR; the easiest way to get a lift anywhere!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qv4-VD-JHS">
+                                                            <rect key="frame" x="154.66666666666666" y="65.666666666666686" width="0.0" height="94.999999999999972"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="95" id="qOd-yj-2Fa"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="350" id="6HZ-bV-699"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7we-il-O38">
+                                                    <rect key="frame" x="0.0" y="180.66666666666666" width="350" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="NZH-Rx-lsQ"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Passenger"/>
+                                                        <segment title="Driver"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.84705882349999995" green="0.2784313725" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                </segmentedControl>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-kD-ono">
+                                                    <rect key="frame" x="0.0" y="240.66666666666663" width="350" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="PkT-8Y-3hQ"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-Ih-FIb">
+                                                    <rect key="frame" x="0.0" y="320.66666666666663" width="350" height="60.000000000000057"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="pjb-hy-Ima"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8A-wK-Fef" customClass="RoundedShadowButton" customModule="HitchHiker_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="656" width="374" height="60"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="wmw-V9-J7n"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="28"/>
+                                            <state key="normal" title="SIGN UP / LOG IN">
+                                                <color key="titleColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="u8A-wK-Fef" secondAttribute="trailing" constant="20" id="1lv-xj-fjw"/>
+                                        <constraint firstItem="u8A-wK-Fef" firstAttribute="leading" secondItem="GY5-I3-xOW" secondAttribute="leading" constant="20" id="2VQ-zR-Sa0"/>
+                                        <constraint firstItem="JgL-sV-vvh" firstAttribute="centerX" secondItem="GY5-I3-xOW" secondAttribute="centerX" id="5FH-zm-oRB"/>
+                                        <constraint firstAttribute="bottom" secondItem="u8A-wK-Fef" secondAttribute="bottom" constant="20" id="9kX-gY-CFi"/>
+                                        <constraint firstItem="pTK-fO-9CN" firstAttribute="leading" secondItem="GY5-I3-xOW" secondAttribute="leading" constant="20" id="gZu-l0-vrO"/>
+                                        <constraint firstItem="pTK-fO-9CN" firstAttribute="top" secondItem="GY5-I3-xOW" secondAttribute="top" constant="30" id="hc2-h4-QgN"/>
+                                        <constraint firstItem="JgL-sV-vvh" firstAttribute="centerY" secondItem="GY5-I3-xOW" secondAttribute="centerY" id="mtq-lq-haZ"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JRR-fH-LlG" firstAttribute="trailing" secondItem="NUY-Mj-PRH" secondAttribute="trailing" id="6bp-Ld-nIh"/>
+                            <constraint firstItem="Gap-eD-jhR" firstAttribute="trailing" secondItem="NUY-Mj-PRH" secondAttribute="trailing" id="D6j-0z-BWF"/>
+                            <constraint firstItem="JRR-fH-LlG" firstAttribute="bottom" secondItem="NUY-Mj-PRH" secondAttribute="bottom" id="SBK-YR-TCu"/>
+                            <constraint firstItem="Gap-eD-jhR" firstAttribute="bottom" secondItem="NUY-Mj-PRH" secondAttribute="bottom" id="YJn-mx-dRu"/>
+                            <constraint firstItem="JRR-fH-LlG" firstAttribute="leading" secondItem="NUY-Mj-PRH" secondAttribute="leading" id="kO7-Sm-L59"/>
+                            <constraint firstItem="Gap-eD-jhR" firstAttribute="top" secondItem="iO0-X0-fwT" secondAttribute="top" id="mUp-6b-kyo"/>
+                            <constraint firstItem="Gap-eD-jhR" firstAttribute="leading" secondItem="NUY-Mj-PRH" secondAttribute="leading" id="nVK-ZV-i5L"/>
+                            <constraint firstItem="JRR-fH-LlG" firstAttribute="top" secondItem="iO0-X0-fwT" secondAttribute="top" id="weH-eV-rgd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NUY-Mj-PRH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgL-cW-XEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528.8" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cancelBtn" width="32" height="31"/>
         <image name="centerMapBtn" width="62" height="62"/>
         <image name="menuSliderBtn" width="30" height="24"/>
+        <image name="pexels-photo-24821" width="2992" height="2000"/>
         <image name="sample-photo" width="320" height="320"/>
     </resources>
 </document>

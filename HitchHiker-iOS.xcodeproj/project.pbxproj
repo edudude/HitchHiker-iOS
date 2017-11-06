@@ -16,6 +16,7 @@
 		C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */; };
 		C41DEFA71FAFC17400DCBB4E /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA61FAFC17400DCBB4E /* CenterVCDelegate.swift */; };
 		C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */; };
+		C41DEFAC1FB094A600DCBB4E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */; };
 		C429E7E11FAE614500687595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E01FAE614500687595 /* AppDelegate.swift */; };
 		C429E7E31FAE614500687595 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E21FAE614500687595 /* HomeVC.swift */; };
 		C429E7E61FAE614500687595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E41FAE614500687595 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		C41DEFA61FAFC17400DCBB4E /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HitchHiker-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429E7E01FAE614500687595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C429E7E21FAE614500687595 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C429E7E21FAE614500687595 /* HomeVC.swift */,
 				C41DEFA11FAF7B0600DCBB4E /* LeftSidePanelVC.swift */,
 				C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */,
+				C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				C41DEFA71FAFC17400DCBB4E /* CenterVCDelegate.swift in Sources */,
 				C41DEFA01FAF6A1F00DCBB4E /* RoundedShadowButton.swift in Sources */,
+				C41DEFAC1FB094A600DCBB4E /* LoginVC.swift in Sources */,
 				C41DEFA21FAF7B0600DCBB4E /* LeftSidePanelVC.swift in Sources */,
 				C41DEF9E1FAF68AD00DCBB4E /* CircleView.swift in Sources */,
 				C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */,
