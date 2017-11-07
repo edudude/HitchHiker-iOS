@@ -39,8 +39,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func authBtnWasPressed(_ sender: Any) {
         if emailField.text != nil && passwordField.text != nil {
             authBtn.animateButton(shouldLoad: true, withMessage: nil)
-            
-            self.view.endEditing(true) //causing ui error
+            self.view.endEditing(true)
             
             if let email = emailField.text, let password = passwordField.text {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in

@@ -7,20 +7,103 @@
 //
 
 import UIKit
+import Firebase
 
 class LeftSidePanelVC: UIViewController {
+    
+    let appDelegate = AppDelegate.getAppDelegate()
+    
+    let currentUserId = Auth.auth().currentUser?.uid
 
+    @IBOutlet weak var pickupModeSwitch: UISwitch!
+    @IBOutlet weak var pickupModeLbl: UILabel!
+    @IBOutlet weak var userImageView: RoundedImageView!
+    @IBOutlet weak var userEmailLbl: UILabel!
+    @IBOutlet weak var userAccountTypeLbl: UILabel!
+    @IBOutlet weak var logInOutBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-    }
-
-    @IBAction func singUpLoginBtnWasPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-        present(loginVC!, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pickupModeSwitch.isOn = false
+        pickupModeSwitch.isHidden = true
+        pickupModeLbl.isHidden = true
+        
+        observePassengersAndDrivers()
+        
+        if Auth.auth().currentUser == nil {
+            userEmailLbl.text = ""
+            userAccountTypeLbl.text = ""
+            userImageView.isHidden = true
+            logInOutBtn.setTitle("Sign up / Login", for: .normal)
+        } else {
+            userEmailLbl.text = Auth.auth().currentUser?.email
+            userAccountTypeLbl.text = ""
+            userImageView.isHidden = false
+            logInOutBtn.setTitle("Logout", for: .normal)
+        }
+    }
+    
+    func observePassengersAndDrivers() {
+        DataService.instance.REF_USERS.observeSingleEvent(of: .value) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if snap.key == self.currentUserId {
+                        self.userAccountTypeLbl.text = "PASSENGER"
+                    }
+                }
+            }
+        }
+        
+        DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if snap.key == self.currentUserId {
+                        self.userAccountTypeLbl.text = "DRIVER"
+                        self.pickupModeSwitch.isHidden = false
+                        
+                        let switchStatus = snap.childSnapshot(forPath: "isPickupModeEnabled").value as! Bool
+                        self.pickupModeSwitch.isOn = switchStatus
+                        self.pickupModeLbl.isHidden = false
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func switchWasToggled(_ sender: Any) {
+        if pickupModeSwitch.isOn {
+            pickupModeLbl.text = "PICKUP MODE ENABLED"
+            appDelegate.MenuContainerVC.toggleLeftPanel()
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": true])
+        } else {
+            pickupModeLbl.text = "PICK UP MODE DIABLED"
+            appDelegate.MenuContainerVC.toggleLeftPanel()
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": false])
+        }
+    }
+    
+    @IBAction func singUpLoginBtnWasPressed(_ sender: Any) {
+        if Auth.auth().currentUser == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+            present(loginVC!, animated: true, completion: nil)
+        } else {
+            do {
+                try Auth.auth().signOut()
+                userEmailLbl.text = ""
+                userAccountTypeLbl.text = ""
+                userImageView.isHidden = true
+                pickupModeLbl.text = ""
+                pickupModeSwitch.isHidden = true
+                logInOutBtn.setTitle("Sign Up / Login", for: .normal)
+            } catch (let error) {
+                print(error)
+            }
+        }
+    }
     
 }
