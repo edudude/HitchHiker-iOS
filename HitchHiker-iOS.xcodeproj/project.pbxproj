@@ -18,6 +18,7 @@
 		C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */; };
 		C41DEFAC1FB094A600DCBB4E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */; };
 		C41DEFAE1FB0969E00DCBB4E /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFAD1FB0969E00DCBB4E /* RoundedCornerTextField.swift */; };
+		C41DEFB21FB132CF00DCBB4E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFB11FB132CF00DCBB4E /* DataService.swift */; };
 		C429E7E11FAE614500687595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E01FAE614500687595 /* AppDelegate.swift */; };
 		C429E7E31FAE614500687595 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E21FAE614500687595 /* HomeVC.swift */; };
 		C429E7E61FAE614500687595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E41FAE614500687595 /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 		C41DEFA91FAFD2B200DCBB4E /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C41DEFAD1FB0969E00DCBB4E /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		C41DEFAF1FB1314C00DCBB4E /* GoogleService-Info .plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info .plist"; sourceTree = "<group>"; };
+		C41DEFB11FB132CF00DCBB4E /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HitchHiker-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429E7E01FAE614500687595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C429E7E21FAE614500687595 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -117,6 +120,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C41DEFB01FB132B300DCBB4E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C41DEFB11FB132CF00DCBB4E /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C429E7D41FAE614500687595 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +149,7 @@
 		C429E7DF1FAE614500687595 /* HitchHiker-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C41DEFB01FB132B300DCBB4E /* Services */,
 				C41DEFA81FAFD28400DCBB4E /* Extensions */,
 				C41DEFA51FAFC15400DCBB4E /* Protocols */,
 				C41DEF961FAF5D9C00DCBB4E /* Model */,
@@ -148,6 +160,7 @@
 				C429E7E71FAE614500687595 /* Assets.xcassets */,
 				C429E7E91FAE614500687595 /* LaunchScreen.storyboard */,
 				C429E7EC1FAE614500687595 /* Info.plist */,
+				C41DEFAF1FB1314C00DCBB4E /* GoogleService-Info .plist */,
 			);
 			path = "HitchHiker-iOS";
 			sourceTree = "<group>";
@@ -299,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41DEFA71FAFC17400DCBB4E /* CenterVCDelegate.swift in Sources */,
+				C41DEFB21FB132CF00DCBB4E /* DataService.swift in Sources */,
 				C41DEFA01FAF6A1F00DCBB4E /* RoundedShadowButton.swift in Sources */,
 				C41DEFAC1FB094A600DCBB4E /* LoginVC.swift in Sources */,
 				C41DEFA21FAF7B0600DCBB4E /* LeftSidePanelVC.swift in Sources */,
