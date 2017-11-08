@@ -21,6 +21,7 @@
 		C41DEFB21FB132CF00DCBB4E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFB11FB132CF00DCBB4E /* DataService.swift */; };
 		C41DEFB61FB1401A00DCBB4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C41DEFB51FB13F7800DCBB4E /* GoogleService-Info.plist */; };
 		C41DEFBA1FB357B400DCBB4E /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFB91FB357B400DCBB4E /* UpdateService.swift */; };
+		C41DEFBC1FB35CFD00DCBB4E /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */; };
 		C429E7E11FAE614500687595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E01FAE614500687595 /* AppDelegate.swift */; };
 		C429E7E31FAE614500687595 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429E7E21FAE614500687595 /* HomeVC.swift */; };
 		C429E7E61FAE614500687595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E41FAE614500687595 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		C41DEFB11FB132CF00DCBB4E /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C41DEFB51FB13F7800DCBB4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C41DEFB91FB357B400DCBB4E /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		C429E7DD1FAE614500687595 /* HitchHiker-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HitchHiker-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429E7E01FAE614500687595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C429E7E21FAE614500687595 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C41DEF9D1FAF68AD00DCBB4E /* CircleView.swift */,
 				C41DEF9F1FAF6A1F00DCBB4E /* RoundedShadowButton.swift */,
 				C41DEFAD1FB0969E00DCBB4E /* RoundedCornerTextField.swift */,
+				C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				C41DEF9E1FAF68AD00DCBB4E /* CircleView.swift in Sources */,
 				C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */,
 				C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */,
+				C41DEFBC1FB35CFD00DCBB4E /* DriverAnnotation.swift in Sources */,
 				C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */,
 				C41DEFBA1FB357B400DCBB4E /* UpdateService.swift in Sources */,
 				C429E7E31FAE614500687595 /* HomeVC.swift in Sources */,
