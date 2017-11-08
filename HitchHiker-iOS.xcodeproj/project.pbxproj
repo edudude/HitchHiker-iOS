@@ -92,13 +92,13 @@
 		C41DEF951FAF5D8D00DCBB4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */,
 				C41DEF971FAF5E6200DCBB4E /* GradientView.swift */,
 				C41DEF991FAF668100DCBB4E /* RoundedImageView.swift */,
 				C41DEF9B1FAF675100DCBB4E /* RoundedShadowView.swift */,
 				C41DEF9D1FAF68AD00DCBB4E /* CircleView.swift */,
 				C41DEF9F1FAF6A1F00DCBB4E /* RoundedShadowButton.swift */,
 				C41DEFAD1FB0969E00DCBB4E /* RoundedCornerTextField.swift */,
-				C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
