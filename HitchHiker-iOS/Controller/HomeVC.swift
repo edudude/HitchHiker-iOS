@@ -17,6 +17,7 @@ class HomeVC: UIViewController{
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var actionBtn: RoundedShadowButton!
     @IBOutlet weak var centerMapBtn: UIButton!
+    @IBOutlet weak var destinationTextField: UITextField!
     
     var delegate: CenterVCDelegate?
     
@@ -36,6 +37,7 @@ class HomeVC: UIViewController{
         checkLocationAuthStatus()
         
         mapView.delegate = self
+        destinationTextField.delegate = self
         
         centerMapOnUserLocation()
         
@@ -155,35 +157,46 @@ extension HomeVC: MKMapViewDelegate {
 
 extension HomeVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        tableView.frame = CGRect(x: 20, y: view.frame.height, width: view.frame.width - 40, height: view.frame.height - 170)
-        tableView.layer.cornerRadius = 5.0
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.tag = 18
-        tableView.rowHeight = 60
-        
-        view.addSubview(tableView)
+        if textField == destinationTextField {
+            tableView.frame = CGRect(x: 20, y: view.frame.height, width: view.frame.width - 40, height: view.frame.height - 170)
+            tableView.layer.cornerRadius = 5.0
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
+            
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+            tableView.tag = 18
+            tableView.rowHeight = 60
+            
+            view.addSubview(tableView)
+            animateTableView(shouldShow: true)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        <#code#>
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        <#code#>
+        
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        <#code#>
+        return true
+    }
+    
+    func animateTableView(shouldShow: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.tableView.frame = CGRect(x: 20, y: 170, width: self.view.frame.width - 40, height: self.view.frame.height - 170)
+
+        }
     }
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -195,7 +208,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        print("selected")
     }
 }
 
