@@ -270,5 +270,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         animateTableView(shouldShow: false)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if destinationTextField.text == "" {
+            animateTableView(shouldShow: false)
+        }
+    }
+    
 }
 
