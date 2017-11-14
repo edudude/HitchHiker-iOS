@@ -18,6 +18,7 @@ class HomeVC: UIViewController{
     @IBOutlet weak var actionBtn: RoundedShadowButton!
     @IBOutlet weak var centerMapBtn: UIButton!
     @IBOutlet weak var destinationTextField: UITextField!
+    @IBOutlet weak var destinationCircle: CircleView!
     
     var delegate: CenterVCDelegate?
     
@@ -27,6 +28,8 @@ class HomeVC: UIViewController{
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80) , backgroundColor: .white)
     var tableView = UITableView()
+    
+    var matchingItems: [MKMapItem] = [MKMapItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +156,28 @@ extension HomeVC: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         centerMapBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
     }
+    
+    func performSearch() {
+        matchingItems.removeAll()
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = destinationTextField.text
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        
+        search.start { (response, error) in
+            if error != nil {
+                print(error.debugDescription)
+            } else if response!.mapItems.count == 0 {
+                print("No results!")
+            } else {
+                for mapItem in response!.mapItems {
+                    self.matchingItems.append(mapItem as MKMapItem)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension HomeVC: UITextFieldDelegate {
@@ -171,18 +196,37 @@ extension HomeVC: UITextFieldDelegate {
             
             view.addSubview(tableView)
             animateTableView(shouldShow: true)
+
+            UIView.animate(withDuration: 0.2, animations: {
+                self.destinationCircle.backgroundColor = .red
+                self.destinationCircle.borderColor = UIColor.init(red: 199 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+            })
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == destinationTextField {
+            performSearch()
+            view.endEditing(true)
+        }
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        if textField == destinationTextField {
+            if destinationTextField.text == "" {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.destinationCircle.borderColor = .lightGray
+                    self.destinationCircle.borderColor = .darkGray
+                })
+            }
+        }
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        matchingItems = []
+        tableView.reloadData()
+        centerMapOnUserLocation()
         return true
     }
     
@@ -208,7 +252,11 @@ extension HomeVC: UITextFieldDelegate {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "locationCell")
+        let mapItem = matchingItems[indexPath.row]
+        cell.textLabel?.text = mapItem.name
+        cell.detailTextLabel?.text = mapItem.placemark.title
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -216,7 +264,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return matchingItems.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
