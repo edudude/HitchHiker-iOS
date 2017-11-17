@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C403DA6B1FBE62C100CB2450 /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DA6A1FBE62C100CB2450 /* PassengerAnnotation.swift */; };
 		C41DEF981FAF5E6200DCBB4E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEF971FAF5E6200DCBB4E /* GradientView.swift */; };
 		C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEF991FAF668100DCBB4E /* RoundedImageView.swift */; };
 		C41DEF9C1FAF675100DCBB4E /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DEF9B1FAF675100DCBB4E /* RoundedShadowView.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4FAA54BE6877BD62C1E46909 /* Pods_CarPool_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPool_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C403DA6A1FBE62C100CB2450 /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		C41DEF971FAF5E6200DCBB4E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C41DEF991FAF668100DCBB4E /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		C41DEF9B1FAF675100DCBB4E /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		C41DEF951FAF5D8D00DCBB4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C403DA6A1FBE62C100CB2450 /* PassengerAnnotation.swift */,
 				C41DEFBB1FB35CFD00DCBB4E /* DriverAnnotation.swift */,
 				C41DEF971FAF5E6200DCBB4E /* GradientView.swift */,
 				C41DEF991FAF668100DCBB4E /* RoundedImageView.swift */,
@@ -326,6 +329,7 @@
 				C41DEFA21FAF7B0600DCBB4E /* LeftSidePanelVC.swift in Sources */,
 				C41DEF9E1FAF68AD00DCBB4E /* CircleView.swift in Sources */,
 				C41DEFA41FAFBE1000DCBB4E /* ContainerVC.swift in Sources */,
+				C403DA6B1FBE62C100CB2450 /* PassengerAnnotation.swift in Sources */,
 				C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */,
 				C41DEFBC1FB35CFD00DCBB4E /* DriverAnnotation.swift in Sources */,
 				C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */,

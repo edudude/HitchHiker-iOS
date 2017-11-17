@@ -249,7 +249,6 @@ extension HomeVC: UITextFieldDelegate {
     }
 }
 
-
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "locationCell")
