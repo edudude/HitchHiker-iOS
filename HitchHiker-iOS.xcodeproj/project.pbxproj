@@ -29,6 +29,7 @@
 		C429E7E81FAE614500687595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E71FAE614500687595 /* Assets.xcassets */; };
 		C429E7EB1FAE614500687595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E91FAE614500687595 /* LaunchScreen.storyboard */; };
 		C4B331171FC3C79300185626 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B331161FC3C79300185626 /* UIViewControllerExt.swift */; };
+		C4F626B71FC4D7E500EA8CD6 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */; };
 		F5B41340096DB68418F4B824 /* Pods_CarPool_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAA54BE6877BD62C1E46909 /* Pods_CarPool_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		C429E7EA1FAE614500687595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C429E7EC1FAE614500687595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B331161FC3C79300185626 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		C89D644D6CDFE5B3F5F9EF6D /* Pods-CarPool-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPool-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPool-iOS/Pods-CarPool-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EE7B621BE1E9C4C9C43FE8F2 /* Pods-CarPool-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPool-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPool-iOS/Pods-CarPool-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C41DEFA61FAFC17400DCBB4E /* CenterVCDelegate.swift */,
+				C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				C403DA6B1FBE62C100CB2450 /* PassengerAnnotation.swift in Sources */,
 				C41DEFAA1FAFD2B200DCBB4E /* UIViewExt.swift in Sources */,
 				C41DEFBC1FB35CFD00DCBB4E /* DriverAnnotation.swift in Sources */,
+				C4F626B71FC4D7E500EA8CD6 /* Alertable.swift in Sources */,
 				C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */,
 				C41DEFBA1FB357B400DCBB4E /* UpdateService.swift in Sources */,
 				C429E7E31FAE614500687595 /* HomeVC.swift in Sources */,
