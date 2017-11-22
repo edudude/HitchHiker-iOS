@@ -59,8 +59,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                             switch errorCode {
                             case .wrongPassword:
                                 self.showAlert("Whoops! That was the wrong password.")
-                                print()
+                            case .userNotFound:
+                                print("user not found")
+                                break
                             default:
+                                print("\(errorCode.rawValue)signin")
                                 self.showAlert("An unexpected error occurred. Please try again.")
                             }
                         }
@@ -72,6 +75,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                     case .invalidEmail:
                                         self.showAlert("That is an invalid email! Please try again")
                                     default:
+                                        print("\(errorCode)create")
                                         self.showAlert("An unexpected error occurred. Please try again.")
                                     }
                                     
@@ -87,6 +91,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                     }
                                 }
+                                print("herehere")
                                 self.dismiss(animated: true, completion: nil)
                             }
                             

@@ -52,6 +52,7 @@ class LeftSidePanelVC: UIViewController {
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     if snap.key == self.currentUserId {
+                        //should be main thread
                         self.userAccountTypeLbl.text = "PASSENGER"
                     }
                 }
@@ -62,6 +63,7 @@ class LeftSidePanelVC: UIViewController {
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     if snap.key == self.currentUserId {
+                        //should be main thread
                         self.userAccountTypeLbl.text = "DRIVER"
                         self.pickupModeSwitch.isHidden = false
                         
