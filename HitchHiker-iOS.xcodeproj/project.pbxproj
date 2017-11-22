@@ -30,6 +30,7 @@
 		C429E7EB1FAE614500687595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E91FAE614500687595 /* LaunchScreen.storyboard */; };
 		C4B331171FC3C79300185626 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B331161FC3C79300185626 /* UIViewControllerExt.swift */; };
 		C4F626B71FC4D7E500EA8CD6 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */; };
+		C4F626B91FC539B400EA8CD6 /* PickupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F626B81FC539B400EA8CD6 /* PickupVC.swift */; };
 		F5B41340096DB68418F4B824 /* Pods_CarPool_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAA54BE6877BD62C1E46909 /* Pods_CarPool_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		C429E7EC1FAE614500687595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B331161FC3C79300185626 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		C4F626B81FC539B400EA8CD6 /* PickupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupVC.swift; sourceTree = "<group>"; };
 		C89D644D6CDFE5B3F5F9EF6D /* Pods-CarPool-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPool-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPool-iOS/Pods-CarPool-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EE7B621BE1E9C4C9C43FE8F2 /* Pods-CarPool-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPool-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPool-iOS/Pods-CarPool-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				C41DEFA11FAF7B0600DCBB4E /* LeftSidePanelVC.swift */,
 				C41DEFA31FAFBE1000DCBB4E /* ContainerVC.swift */,
 				C41DEFAB1FB094A600DCBB4E /* LoginVC.swift */,
+				C4F626B81FC539B400EA8CD6 /* PickupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				C4F626B71FC4D7E500EA8CD6 /* Alertable.swift in Sources */,
 				C41DEF9A1FAF668100DCBB4E /* RoundedImageView.swift in Sources */,
 				C41DEFBA1FB357B400DCBB4E /* UpdateService.swift in Sources */,
+				C4F626B91FC539B400EA8CD6 /* PickupVC.swift in Sources */,
 				C429E7E31FAE614500687595 /* HomeVC.swift in Sources */,
 				C41DEF9C1FAF675100DCBB4E /* RoundedShadowView.swift in Sources */,
 				C41DEFAE1FB0969E00DCBB4E /* RoundedCornerTextField.swift in Sources */,
