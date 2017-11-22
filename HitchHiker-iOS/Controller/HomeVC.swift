@@ -62,6 +62,18 @@ class HomeVC: UIViewController, Alertable {
         revealingSplashView.startAnimation()
         
         revealingSplashView.heartAttack = true
+        
+        UpdateService.instance.observeTrips { (tripDict) in
+            if let tripDict = tripDict {
+                let pickupCoordinate = tripDict["pickupCoordinate"] as! NSArray
+                let tripKey = tripDict["passengerKey"] as! String
+                let acceptanceStatus = tripDict["tripIsAccepted"] as! Bool
+                
+                if acceptanceStatus == false {
+                    
+                }
+            }
+        }
     }
     
     func checkLocationAuthStatus() {
