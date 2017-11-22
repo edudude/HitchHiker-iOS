@@ -585,7 +585,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XLJ-J3-iJq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XLJ-J3-iJq" customClass="RoundedMapView" customModule="HitchHiker_iOS" customModuleProvider="target">
                                 <rect key="frame" x="45" y="206" width="325" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="Bi5-vv-Dbt"/>
@@ -610,6 +610,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RjW-1s-xKG"/>
                     </view>
+                    <connections>
+                        <outlet property="pickupMapView" destination="XLJ-J3-iJq" id="I7l-VH-8qJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iY5-zd-nbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
