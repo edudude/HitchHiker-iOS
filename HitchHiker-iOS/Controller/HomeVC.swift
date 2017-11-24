@@ -20,6 +20,7 @@ class HomeVC: UIViewController, Alertable {
     @IBOutlet weak var centerMapBtn: UIButton!
     @IBOutlet weak var destinationTextField: UITextField!
     @IBOutlet weak var destinationCircle: CircleView!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     var delegate: CenterVCDelegate?
     
@@ -174,6 +175,23 @@ class HomeVC: UIViewController, Alertable {
         self.view.endEditing(true)
         destinationTextField.isUserInteractionEnabled = false
     }
+    
+    @IBAction func cancelBtnWasPressed(_ sender: Any) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: tripKey!, forDriverKey: driverKey!)
+            }
+        }
+        
+        DataService.instance.passengerIsOnTrip(passengerKey: currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: driverKey!)
+            } else {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: nil)
+            }
+        }
+    }
+    
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
         DataService.instance.REF_USERS.observeSingleEvent(of: .value) { (snapshot) in
             if let userSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
