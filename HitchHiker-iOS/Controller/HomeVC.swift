@@ -115,7 +115,7 @@ class HomeVC: UIViewController, Alertable {
                 
         DataService.instance.userIsDriver(userKey: self.currentUserId!, handler: { (isDriver) in
             if isDriver == true {
-                        
+                       //remove overlays
             } else {
                 self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
                 self.actionBtn.animateButton(shouldLoad: false, withMessage: "REQUEST RIDE")
@@ -123,10 +123,10 @@ class HomeVC: UIViewController, Alertable {
                 self.destinationTextField.text = ""
                         
                 self.centerMapOnUserLocation()
-                    }
-            })
+            }
+        })
             
-        }
+      }
     }
     
     func checkLocationAuthStatus() {
@@ -372,6 +372,32 @@ extension HomeVC: MKMapViewDelegate {
         
         region = mapView.regionThatFits(region)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func removeOverlaysAndAnnotations(forDrivers: Bool?, forPassengers: Bool?) {
+        for annotation in mapView.annotations {
+            if let annotation = annotation as? MKPointAnnotation {
+                mapView.removeAnnotation(annotation)
+            }
+            
+            if forPassengers! {
+                if let annotation = annotation as? PassengerAnnotation {
+                    mapView.removeAnnotation(annotation)
+                }
+            }
+            
+            if forDrivers! {
+                if let annotation = annotation as? DriverAnnotation {
+                    mapView.removeAnnotation(annotation)
+                }
+            }
+        }
+        
+        for overlay in mapView.overlays {
+            if overlay is MKPolyline {
+                mapView.remove(overlay)
+            }
+        }
     }
 }
 
