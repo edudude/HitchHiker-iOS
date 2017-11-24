@@ -194,7 +194,7 @@ class HomeVC: UIViewController, Alertable {
                     let tripDict = tripSnapshot.value as? Dictionary<String, AnyObject>
                     
                     if tripDict?["tripIsAccepted"] as? Bool == true {
-                        self.removeOverlaysAndAnnotations(forDrivers: true, forPassengers: true)
+                        self.removeOverlaysAndAnnotations(forDrivers: false, forPassengers: true)
                         
                         let driverId = tripDict?["driverKey"] as! String
                         
@@ -213,9 +213,9 @@ class HomeVC: UIViewController, Alertable {
                                         let driverMapItem = MKMapItem(placemark: driverPlacemark)
                                         
                                         let passengerAnnotation = PassengerAnnotation(coordinate: pickupCoordinate, key: self.currentUserId!)
-                                        let driverAnnotation = DriverAnnotation(coordinate: driverCoordinate, withKey: driverId)
+                                        //let driverAnnotation = DriverAnnotation(coordinate: driverCoordinate, withKey: driverId)
                                         
-                                        self.mapView.addAnnotations([passengerAnnotation, driverAnnotation])
+                                        self.mapView.addAnnotation(passengerAnnotation)
                                         self.searchMapKitForResultsWithPolyline(forOriginMapItem: driverMapItem, withDestinationMapItem: pickupMapItem)
                                         self.actionBtn.animateButton(shouldLoad: false, withMessage: "DRIVER COMING")
                                         self.actionBtn.isUserInteractionEnabled = false
@@ -399,8 +399,10 @@ extension HomeVC: MKMapViewDelegate {
             }
             self.route = response.routes[0]
             
-            self.mapView.add(self.route.polyline)
-            
+            if self.mapView.overlays.count == 0 {
+                self.mapView.add(self.route.polyline)
+            }
+
             let delegate = AppDelegate.getAppDelegate()
             delegate.window?.rootViewController?.shouldPresentLoadingView(false)
         }
