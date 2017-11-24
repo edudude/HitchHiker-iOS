@@ -95,8 +95,30 @@ class HomeVC: UIViewController, Alertable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DataService.instance.driverIsAvailable(key: self.currentUserId!) { (status) in
-            if status == false {
+        DataService.instance.REF_TRIPS.observe(.childRemoved) { (removedTripSnapshot) in
+            let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
+            if removedTripDict?["driverKey"] != nil {
+                DataService.instance.REF_DRIVERS.child(removedTripDict?["driverKey"] as! String).updateChildValues(["driverIsOnTrip": false])
+            }
+            
+            DataService.instance.userIsDriver(userKey: self.currentUserId!, handler: { (isDriver) in
+                if isDriver == true {
+                    self.removeOverlaysAndAnnotations(forDrivers: false, forPassengers: true)
+                } else {
+                    self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                    self.actionBtn.animateButton(shouldLoad: false, withMessage: "REQUEST RIDE")
+                    self.destinationTextField.isUserInteractionEnabled = true
+                    self.destinationTextField.text = ""
+                    
+                    self.removeOverlaysAndAnnotations(forDrivers: false, forPassengers: true)
+                    self.centerMapOnUserLocation()
+                }
+            })
+            
+        }
+        
+        DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
                 DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
                     if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot] {
                         for trip in tripSnapshot {
@@ -113,30 +135,9 @@ class HomeVC: UIViewController, Alertable {
                 })
             }
         }
-        
+
         connectUserAndDriverForTrip()
         
-        DataService.instance.REF_TRIPS.observe(.childRemoved) { (removedTripSnapshot) in
-            let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
-            if removedTripDict?["driverKey"] != nil {
-                DataService.instance.REF_DRIVERS.child(removedTripDict?["driverKey"] as! String).updateChildValues(["driverIsOnTrip": false])
-            }
-                
-        DataService.instance.userIsDriver(userKey: self.currentUserId!, handler: { (isDriver) in
-            if isDriver == true {
-                self.removeOverlaysAndAnnotations(forDrivers: false, forPassengers: true)
-            } else {
-                self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
-                self.actionBtn.animateButton(shouldLoad: false, withMessage: "REQUEST RIDE")
-                self.destinationTextField.isUserInteractionEnabled = true
-                self.destinationTextField.text = ""
-                
-                self.removeOverlaysAndAnnotations(forDrivers: false, forPassengers: true)
-                self.centerMapOnUserLocation()
-            }
-        })
-            
-      }
     }
     
     func checkLocationAuthStatus() {
@@ -363,8 +364,6 @@ extension HomeVC: MKMapViewDelegate {
         
         shouldPresentLoadingView(false)
         
-        zoom(toFitAnnontationsFromMapview: self.mapView, forActiveTripWithDriver: false, withKey: nil)
-        
         return lineRenderer
     }
     
@@ -429,6 +428,8 @@ extension HomeVC: MKMapViewDelegate {
             if self.mapView.overlays.count == 0 {
                 self.mapView.add(self.route.polyline)
             }
+            
+            self.zoom(toFitAnnontationsFromMapview: self.mapView, forActiveTripWithDriver: false, withKey: nil)
 
             let delegate = AppDelegate.getAppDelegate()
             delegate.window?.rootViewController?.shouldPresentLoadingView(false)
