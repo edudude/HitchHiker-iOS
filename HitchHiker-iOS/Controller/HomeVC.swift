@@ -18,6 +18,14 @@ enum AnnotationType {
     case driver
 }
 
+enum ButtonAction {
+    case requestRide
+    case getDirectionsToPassenger
+    case getDirectionsToDestination
+    case startTrip
+    case endTrip
+}
+
 class HomeVC: UIViewController, Alertable {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -68,6 +76,8 @@ class HomeVC: UIViewController, Alertable {
                 }
             })
         }
+        
+        cancelBtn.alpha = 0.0
         
         self.view.addSubview(revealingSplashView)
         revealingSplashView.animationType = SplashAnimationType.heartBeat
@@ -250,11 +260,7 @@ class HomeVC: UIViewController, Alertable {
     }
 
     @IBAction func actionBtnWasPressed(_ sender: Any) {
-        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
-        actionBtn.animateButton(shouldLoad: true, withMessage: nil)
         
-        self.view.endEditing(true)
-        destinationTextField.isUserInteractionEnabled = false
     }
     
     @IBAction func cancelBtnWasPressed(_ sender: Any) {
@@ -295,6 +301,42 @@ class HomeVC: UIViewController, Alertable {
     }
     @IBAction func menuButtonWasPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()
+    }
+    
+    func buttonSelector(forAction action: ButtonAction) {
+        switch action {
+        case .requestRide:
+            if destinationTextField.text != "" {
+                UpdateService.instance.updateTripsWithCoordinatesUponRequest()
+                actionBtn.animateButton(shouldLoad: true, withMessage: nil)
+                cancelBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+                
+                self.view.endEditing(true)
+                destinationTextField.isUserInteractionEnabled = false
+            }
+        case .getDirectionsToPassenger:
+            DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).observe(.value
+                        , with: { (tripSnapshot) in
+                            let tripDict = tripSnapshot.value as? Dictionary<String, AnyObject>
+                            
+                            let pickupCoordinateArray = tripDict?["pickupCoordinate"] as! NSArray
+                            let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees)
+                            let pickupMapItem = MKMapItem(placemark: MKPlacemark(coordinate: pickupCoordinate))
+                            pickupMapItem.name = "Passenger Pickup Point"
+                            pickupMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+                            
+                    })
+                }
+            })
+        case .startTrip:
+            print("start trip selected")
+        case .getDirectionsToDestination:
+            print("Got directions to destination")
+        case .endTrip:
+            print("Ended trip!")
+        }
     }
 }
 
