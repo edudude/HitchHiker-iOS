@@ -52,6 +52,8 @@ class HomeVC: UIViewController, Alertable {
     
     var selectedItemPlacemark: MKPlacemark? = nil
     
+    var actionForButton: ButtonAction = .requestRide
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,8 +85,6 @@ class HomeVC: UIViewController, Alertable {
         revealingSplashView.animationType = SplashAnimationType.heartBeat
         revealingSplashView.startAnimation()
         
-        revealingSplashView.heartAttack = true
-        
         UpdateService.instance.observeTrips { (tripDict) in
             if let tripDict = tripDict {
                 let pickupCoordinateArray = tripDict["pickupCoordinate"] as! NSArray
@@ -109,6 +109,12 @@ class HomeVC: UIViewController, Alertable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        DataService.instance.userIsDriver(userKey: currentUserId!) { (status) in
+            if status == true {
+                self.buttonsForDriver(areHidden: true)
+            }
+        }
         
         DataService.instance.REF_TRIPS.observe(.childRemoved) { (removedTripSnapshot) in
             let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
@@ -146,6 +152,11 @@ class HomeVC: UIViewController, Alertable {
                                 self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlaceMark))
                                 
                                 self.setCustomRegion(forAnnotationType: .pickup, withCoordinate: pickupCoordinate)
+                                
+                                self.actionForButton = .getDirectionsToPassenger
+                                self.actionBtn.setTitle("GET DIRECTIONS", for: .normal)
+                                
+                                self.buttonsForDriver(areHidden: false)
                             }
                         }
                     }
@@ -162,6 +173,24 @@ class HomeVC: UIViewController, Alertable {
             manager?.startUpdatingLocation()
         } else {
             manager?.requestAlwaysAuthorization()
+        }
+    }
+    
+    func buttonsForDriver(areHidden: Bool) {
+        if areHidden {
+            self.actionBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.actionBtn.isHidden = true
+            self.cancelBtn.isHidden = true
+            self.centerMapBtn.isHidden = true
+        } else {
+            self.actionBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.cancelBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.centerMapBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.actionBtn.isHidden = false
+            self.cancelBtn.isHidden = false
+            self.centerMapBtn.isHidden = false
         }
     }
     
@@ -210,6 +239,7 @@ class HomeVC: UIViewController, Alertable {
                 }
             }
         }
+        revealingSplashView.heartAttack = true
     }
     
     func connectUserAndDriverForTrip() {
@@ -260,7 +290,7 @@ class HomeVC: UIViewController, Alertable {
     }
 
     @IBAction func actionBtnWasPressed(_ sender: Any) {
-        
+        buttonSelector(forAction: actionForButton)
     }
     
     @IBAction func cancelBtnWasPressed(_ sender: Any) {
