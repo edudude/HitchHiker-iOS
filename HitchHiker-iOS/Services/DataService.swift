@@ -84,9 +84,11 @@ class DataService {
     }
     
     func passengerIsOnTrip(passengerKey: String, handler: @escaping (_ status: Bool?, _ driverKey: String?, _ tripKey: String?) -> Void) {
-        DataService.instance.REF_TRIPS.observeSingleEvent(of: .value) { (tripSnapshot) in
+        DataService.instance.REF_TRIPS.observe(.value) { (tripSnapshot) in
+            
             if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot] {
                 for trip in tripSnapshot {
+                    
                     if trip.key == passengerKey {
                         if trip.childSnapshot(forPath: "tripIsAccepted").value as? Bool == true {
                             let driverKey = trip.childSnapshot(forPath: "driverKey").value as? String
