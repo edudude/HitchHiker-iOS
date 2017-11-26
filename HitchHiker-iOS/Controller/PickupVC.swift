@@ -35,7 +35,7 @@ class PickupVC: UIViewController {
         
         DataService.instance.REF_TRIPS.child(passengerKey).observe(.value) { (tripSnapshot) in
             if tripSnapshot.exists() {
-                if tripSnapshot.childSnapshot(forPath: "tripIsAccepted").value as? Bool == true {
+                if tripSnapshot.childSnapshot(forPath: TRIP_IS_ACCEPTED).value as? Bool == true {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {

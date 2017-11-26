@@ -28,6 +28,7 @@
 		C429E7E61FAE614500687595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E41FAE614500687595 /* Main.storyboard */; };
 		C429E7E81FAE614500687595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E71FAE614500687595 /* Assets.xcassets */; };
 		C429E7EB1FAE614500687595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C429E7E91FAE614500687595 /* LaunchScreen.storyboard */; };
+		C444470B1FCB1D0500AC8463 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C444470A1FCB1D0500AC8463 /* Constants.swift */; };
 		C4B331171FC3C79300185626 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B331161FC3C79300185626 /* UIViewControllerExt.swift */; };
 		C4F626B71FC4D7E500EA8CD6 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */; };
 		C4F626B91FC539B400EA8CD6 /* PickupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F626B81FC539B400EA8CD6 /* PickupVC.swift */; };
@@ -60,6 +61,7 @@
 		C429E7E71FAE614500687595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C429E7EA1FAE614500687595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C429E7EC1FAE614500687595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C444470A1FCB1D0500AC8463 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4B331161FC3C79300185626 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C4F626B61FC4D7E500EA8CD6 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		C4F626B81FC539B400EA8CD6 /* PickupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupVC.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		C429E7DF1FAE614500687595 /* HitchHiker-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C44447091FCB1CF100AC8463 /* Resources */,
 				C41DEFB01FB132B300DCBB4E /* Services */,
 				C41DEFA81FAFD28400DCBB4E /* Extensions */,
 				C41DEFA51FAFC15400DCBB4E /* Protocols */,
@@ -185,6 +188,14 @@
 				C41DEFB51FB13F7800DCBB4E /* GoogleService-Info.plist */,
 			);
 			path = "HitchHiker-iOS";
+			sourceTree = "<group>";
+		};
+		C44447091FCB1CF100AC8463 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C444470A1FCB1D0500AC8463 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FD568E13D070D0EBAC9CB854 /* Pods */ = {
@@ -335,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41DEFA71FAFC17400DCBB4E /* CenterVCDelegate.swift in Sources */,
+				C444470B1FCB1D0500AC8463 /* Constants.swift in Sources */,
 				C41DEFB21FB132CF00DCBB4E /* DataService.swift in Sources */,
 				C4B331171FC3C79300185626 /* UIViewControllerExt.swift in Sources */,
 				C41DEFA01FAF6A1F00DCBB4E /* RoundedShadowButton.swift in Sources */,
