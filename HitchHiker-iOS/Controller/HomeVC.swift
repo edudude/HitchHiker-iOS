@@ -437,7 +437,20 @@ class HomeVC: UIViewController, Alertable {
                 })
             })
         case .getDirectionsToDestination:
-            print("Got directions to destination")
+            DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).child("destinationCoordinate").observe(.value
+                        , with: { (snapshot) in
+                            let destinationCoordinateArray = snapshot.value as! NSArray
+                            let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationCoordinateArray[0] as! CLLocationDegrees, longitude: destinationCoordinateArray[1] as! CLLocationDegrees)
+                            let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+                            let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+                            
+                            destinationMapItem.name = "Passenger Destination"
+                            destinationMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+                    })
+                }
+            })
         case .endTrip:
             print("Ended trip!")
         }
@@ -610,10 +623,8 @@ extension HomeVC: MKMapViewDelegate {
             }
             self.route = response.routes[0]
             
-            //if self.mapView.overlays.count == 0 {
-                self.mapView.add(self.route.polyline)
-            //}
-            
+            self.mapView.add(self.route.polyline)
+
             self.zoom(toFitAnnontationsFromMapview: self.mapView, forActiveTripWithDriver: false, withKey: nil)
 
             let delegate = AppDelegate.getAppDelegate()
